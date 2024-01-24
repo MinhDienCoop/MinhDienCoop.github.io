@@ -1,11 +1,11 @@
 
-import { Nunito } from 'next/font/google'
+import { Playfair } from 'next/font/google'
 
 import './globals.css';
 import Header from '@/app/components/Header/header'
 import Footer from '@/app/components/Footer/footer'
 
-const fontBase = Nunito({ subsets: ['latin'] })
+const fontBase = Playfair({ subsets: ['latin', 'vietnamese'] })
 
 export const metadata = {
   title: 'Mdc',
@@ -17,6 +17,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  
   return (
     <html lang="en">
       <body className={`${fontBase.className} bg-[#f5f5f5]`} suppressHydrationWarning={true}>

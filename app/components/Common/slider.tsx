@@ -14,15 +14,29 @@ interface CarouselItem {
     secondaryAction?: () => void;
 }
 
+interface Responsive {
+    breakpoint: number,
+    settings: {
+        slidesToShow: number,
+        slidesToScroll: number,
+        infinite?: boolean,
+        dots?: boolean
+    }
+}
+
 interface SliderProps {
     carouselItems: CarouselItem[];
     afterChange?: () => void;
     className?: string;
     itemClassName?: string;
-    slidesToShow: number;
     itemTitleClassName?: string;
     itemContentClassName?: string;
     itemImageThumbClassName?: string;
+    slidesToShow: number;
+    arrows: boolean;
+    dots: boolean;
+    padding: string;
+    responsive?: Responsive[];
 }
 
 const Slider = ({
@@ -30,15 +44,26 @@ const Slider = ({
     afterChange, 
     className, 
     itemClassName, 
-    slidesToShow,
     itemTitleClassName,
     itemContentClassName,
-    itemImageThumbClassName
+    itemImageThumbClassName,
+    slidesToShow,
+    arrows,
+    dots,
+    padding,
+    responsive
 }: SliderProps) => {
     return (
-        <Carousel afterChange={afterChange} className={className&&className} slidesToShow={slidesToShow}>
+        <Carousel 
+            afterChange={afterChange} 
+            className={`-mx-[${padding}] ${className}`} 
+            slidesToShow={slidesToShow} 
+            arrows={arrows} 
+            dots={dots} 
+            responsive={responsive}
+        >
             {carouselItems?.map((item, index) => (
-                <div key={index}>
+                <div key={index} className={`px-[${padding}]`}>
                     <div className={`carousel-item-content w-full ${itemClassName}`}>
                         {(item.title && item.image) &&
                             <div className='carousel-image'>
