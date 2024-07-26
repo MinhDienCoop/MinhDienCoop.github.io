@@ -10,11 +10,9 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Layout>
       <SideBar collapsed={collapsed} />
-      <ContentAdmin
-        children={children}
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
-      />
+      <ContentAdmin collapsed={collapsed} setCollapsed={setCollapsed}>
+        {children}
+      </ContentAdmin>
     </Layout>
   );
 };

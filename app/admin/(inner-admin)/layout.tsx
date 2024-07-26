@@ -21,7 +21,7 @@ export default async function RootLayout({
         className={`${fontBase.className} bg-[#f5f5f5] overflow-hidden`}
         suppressHydrationWarning={true}
       >
-        <AdminLayout children={children} />
+        <AdminLayout>{children}</AdminLayout>
       </body>
     </html>
   );

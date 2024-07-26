@@ -33,7 +33,7 @@ export default function Files() {
       <div className="border border-solid border-[var(--border-cl)] shadow-lg p-3 rounded-lg">
         <Radio.Group onChange={onChangeSort} value={value}>
           {items.map((item: any) => (
-            <Radio value={item.key} className="block">
+            <Radio key={item.key} value={item.key} className="block">
               {item.label}
             </Radio>
           ))}
