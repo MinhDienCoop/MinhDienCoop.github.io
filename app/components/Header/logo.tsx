@@ -1,22 +1,35 @@
-'use client'
-import Image from 'next/image';
-import { useRouter } from "next/navigation";
+"use client";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
-import LogoImage from '@/public/images/logo.png'
+import LogoImageStatic from "@/public/images/logo.png";
+import Link from "next/link";
 
 const Logo = () => {
-    const router = useRouter()
-    return (
-        <div className="w-[90px] min-w-[50px] h-[50px] bg-[rgba(225,_225,_225,_0.2)] rounded-[6px] mr-[24px] overflow-hidden">
-            <Image
-                onClick={() => router.push('/')}
-                src={LogoImage}
-                alt="Mdc Logo"
-                className="hidden md:block cursor-pointer h-full object-cover mx-auto"
-                width={40}
-            />
-        </div>
-    );
-}
- 
+  const router = useRouter();
+  const pathName = usePathname();
+
+  const LogoImage = (
+    <Image
+      onClick={() => router.push("/")}
+      src={LogoImageStatic}
+      alt="Mdc Logo"
+      className="absolute w-full h-full object-contain"
+      fill
+    />
+  );
+
+  return (
+    <>
+      {pathName === "/admin" || pathName === "/" ? (
+        <h1 className="relative w-full h-full">{LogoImage}</h1>
+      ) : (
+        <Link href={pathName} className="relative w-full h-full inline-block">
+          {LogoImage}
+        </Link>
+      )}
+    </>
+  );
+};
+
 export default Logo;

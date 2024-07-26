@@ -6,4 +6,83 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --border-cl: #f0f0f0;
+  --color-link: #256b40;
+  --box-shadow: 0 12.5px 12.5px 12.5px rgba(0, 0, 0, 0.15);
+  --error-cl: #8e0b21;
+
+  --btn-bg: #256b40;
+  --btn-text: #ffffff;
+  --btn-bd: #256b40;
+
+  --btn-bg-hv: #174a2b;
+  --btn-text-hv: #ffffff;
+  --btn-bd-hv: #174a2b;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* antd */
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-primary {
+  background-color: var(--btn-bg);
+  border-color: var(--btn-bd);
+  color: var(--btn-text);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-primary:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  background-color: var(--btn-bg-hover);
+  border-color: var(--btn-bd-hover);
+  color: var(--btn-text-hover);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox-checked
+  .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox-wrapper:not(
+    .ant-checkbox-wrapper-disabled
+  ):hover
+  .ant-checkbox-checked:not(.ant-checkbox-disabled)
+  .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-radio-wrapper
+  .ant-radio-checked
+  .ant-radio-inner {
+  background-color: var(--btn-bg);
+  border-color: var(--btn-bd);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox-wrapper:not(
+    .ant-checkbox-wrapper-disabled
+  ):hover
+  .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox:not(
+    .ant-checkbox-disabled
+  ):hover
+  .ant-checkbox-inner,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-input:hover,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-input:focus,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-input:focus-within,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-input-affix-wrapper:focus,
+:where(
+    .css-dev-only-do-not-override-dkbvqv
+  ).ant-input-affix-wrapper:focus-within,
+.ant-radio-wrapper:hover
+  :where(.css-dev-only-do-not-override-dkbvqv).ant-radio-wrapper,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-radio-wrapper:hover
+  .ant-radio-inner {
+  border-color: var(--btn-bd);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-default:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox-indeterminate
+  .ant-checkbox-inner:after {
+  background-color: var(--btn-bg);
 }
