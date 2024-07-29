@@ -2,83 +2,55 @@ import React, { useState } from "react";
 import { Table, Button, TableProps } from "antd";
 import { LinkOutlined } from "@ant-design/icons";
 import { copyButton } from "@/app/libs";
-import Link from "next/link";
 
 interface DataType {
   key: string;
-  fileName: string;
-  createdAt: string;
-  size: string;
-  fileType: any;
-  link: string;
+  name: string;
+  email: string;
+  type: string;
 }
 
 const columns: TableProps<DataType>["columns"] = [
   {
-    title: "File name",
-    dataIndex: "fileName",
-    key: "fileName",
+    title: "User name",
+    dataIndex: "name",
+    key: "name",
     render: (text) => <a>{text}</a>,
   },
   {
-    title: "Date Added",
-    dataIndex: "createdAt",
-    key: "createdAt",
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
   },
   {
-    title: "Size",
-    dataIndex: "size",
-    key: "size",
-  },
-  {
-    title: "References",
-    key: "fileType",
-    dataIndex: "fileType",
-  },
-  {
-    title: "Link",
-    key: "link",
-    dataIndex: "link",
-    align: "center",
-    render: (text) => (
-      <Button
-        className="py-1 px-3 flex items-center mx-auto"
-        onClick={() => copyButton("file link", text)}
-      >
-        <LinkOutlined />
-      </Button>
-    ),
+    title: "Type",
+    dataIndex: "type",
+    key: "type",
   },
 ];
 
 const data: DataType[] = [
   {
     key: "1",
-    fileName: "image1_022b2d89-8207-46a9-ad66-0684c975622f",
-    createdAt: "Jan 9",
-    size: "6.12 KB",
-    fileType: " 1 product",
-    link: "#",
+    name: "Payton Reichardt",
+    email: "test123@gmail.com",
+    type: "Admin",
   },
   {
     key: "2",
-    fileName: "image2_b21247f2-4397-4e32-b3a4-93cbd1e8a0c8",
-    createdAt: "Jan 9",
-    size: "5.26 KB",
-    fileType: "2 banner",
-    link: "#",
+    name: "Anna Smith",
+    email: "test123@gmail.com",
+    type: "Global user",
   },
   {
     key: "3",
-    fileName: "image2_e6cb628b-75cf-4d6c-bdab-b69501520f73",
-    createdAt: "Jan 9",
-    size: "8.44 KB",
-    fileType: "1 product",
-    link: "#",
+    name: "Petter hold",
+    email: "test123@gmail.com",
+    type: "Silver user",
   },
 ];
 
-const FilesTable: React.FC = () => {
+const UsersTable: React.FC = () => {
   const [fileSelected, setFileSelected] = useState<DataType[]>([]);
 
   const rowSelection = {
@@ -98,12 +70,12 @@ const FilesTable: React.FC = () => {
           <div className="w-full md:flex-1">
             <span>{fileSelected.length} selected</span>
             <Button type="link" className="px-1">
-              in all {data.length}+ files
+              in all {data.length}+ {data.length > 1 ? "users" : "user"}
             </Button>
           </div>
 
           <Button onClick={() => handleDeleteFiles()}>
-            Delete {fileSelected.length > 1 ? "files" : "file"}
+            Delete {fileSelected.length > 1 ? "users" : "user"}
           </Button>
         </div>
       )}
@@ -120,4 +92,4 @@ const FilesTable: React.FC = () => {
   );
 };
 
-export default FilesTable;
+export default UsersTable;

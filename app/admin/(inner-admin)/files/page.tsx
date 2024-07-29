@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Dropdown, Radio, Tooltip, Input } from "antd";
-import type { MenuProps, RadioChangeEvent } from "antd";
+import { Button, Dropdown, Radio, Tooltip, Input, Upload } from "antd";
+import type { MenuProps, RadioChangeEvent, UploadProps } from "antd";
 import { PlusOutlined, SearchOutlined, SwapOutlined } from "@ant-design/icons";
+
 import FilesTable from "@/app/components/Sections/Files/filesTable";
+import PageTitle from "@/app/components/Common/pageTitle";
 
 export default function Files() {
   const [value, setValue] = useState<string>("date");
@@ -42,8 +44,22 @@ export default function Files() {
     );
   };
 
+  const props: UploadProps = {
+    multiple: true,
+    showUploadList: false,
+  };
+
   return (
     <div>
+      <div className="mb-7 flex flex-wrap items-center">
+        <div className="w-full md:flex-1">
+          <PageTitle title="Files" />
+        </div>
+        <Upload {...props}>
+          <Button type="primary">Upload</Button>
+        </Upload>
+      </div>
+
       <div>
         {!showFilter && (
           <div className="flex flex-wrap items-center">

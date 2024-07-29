@@ -1,8 +1,9 @@
 "use client";
 import { Layout } from "antd";
 
-import Logo from "./logo";
+import Logo from "@/app/components/Header/logo";
 import MainMenu from "@/app/components/Header/mainMenu";
+import HeaderTools from "@/app/components/Header/headerTools";
 
 const Header = () => {
   return (
@@ -12,6 +13,7 @@ const Header = () => {
       </div>
 
       <MainMenu />
+      <HeaderTools />
     </Layout.Header>
   );
 };

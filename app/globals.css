@@ -9,6 +9,10 @@
   --border-cl: #f0f0f0;
   --color-link: #256b40;
   --box-shadow: 0 12.5px 12.5px 12.5px rgba(0, 0, 0, 0.15);
+
+  --sidebar-bg: #0b3e1f;
+  --sidebar-text: #ffffff;
+
   --error-cl: #8e0b21;
 
   --btn-bg: #256b40;
@@ -85,4 +89,60 @@
 :where(.css-dev-only-do-not-override-dkbvqv).ant-checkbox-indeterminate
   .ant-checkbox-inner:after {
   background-color: var(--btn-bg);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  .ant-menu-item:not(.ant-menu-item-selected):not(
+    .ant-menu-submenu-selected
+  ):hover,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu
+  .ant-menu-item:not(.ant-menu-item-selected):not(
+    .ant-menu-submenu-selected
+  ):hover,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
+  > .ant-menu-submenu-title:hover,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu
+  .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
+  > .ant-menu-submenu-title:hover {
+  color: var(--sidebar-text);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu
+  .ant-menu-item-selected {
+  color: var(--color-link);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-pagination
+  .ant-pagination-item-active
+  a {
+  color: var(--btn-bd);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-pagination
+  .ant-pagination-item-active {
+  border-color: var(--btn-bd);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-dashed:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  color: var(--btn-bd);
+  border-color: var(--btn-bd);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-link,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-btn-link:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  color: var(--color-link);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv) a:hover {
+  color: var(--color-link);
 }

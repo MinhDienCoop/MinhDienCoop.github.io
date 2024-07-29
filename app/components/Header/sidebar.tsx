@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 
 import Logo from "./logo";
+import Link from "next/link";
 
 interface SideBarProps {
   collapsed: boolean;
@@ -19,7 +20,7 @@ const SideBar = ({ collapsed }: SideBarProps) => {
       trigger={null}
       collapsible
       collapsed={collapsed}
-      className="p-3 h-screen overflow-auto hide-scrollbar"
+      className="p-3 h-screen overflow-auto hide-scrollbar !bg-[var(--sidebar-bg)] !text-[var(--sidebar-text)]"
     >
       <div
         className={`p-[4px] ${
@@ -30,24 +31,24 @@ const SideBar = ({ collapsed }: SideBarProps) => {
       </div>
 
       <Menu
-        theme="dark"
         mode="inline"
         defaultSelectedKeys={["/admin"]}
+        className="bg-transparent text-[inherit] !border-0"
         items={[
           {
             key: "/admin",
             icon: <BarChartOutlined />,
-            label: "Dashboard",
+            label: <Link href="/admin">Dashboard</Link>,
           },
           {
             key: "/files",
             icon: <SnippetsOutlined />,
-            label: "Files",
+            label: <Link href="/admin/files">Files</Link>,
           },
           {
             key: "/user",
             icon: <UserOutlined />,
-            label: "Users",
+            label: <Link href="/admin/users">Users</Link>,
           },
         ]}
       />
