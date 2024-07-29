@@ -1,17 +1,15 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Avatar, Button, Dropdown, Modal } from "antd";
 import type { MenuProps } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
-import { PATHS } from "@/app/utils/path";
 import { getLocalStorage } from "@/app/libs";
 import LoginFormAdmin from "../Sections/loginFormAdmin";
 import RegisterForm from "../Sections/registerForm";
 
 const Account = () => {
-  const userInfo = getLocalStorage("user");
+  const [useJson, setUserJson] = useState<any>({});
   const [openLoginForm, setOpenLoginForm] = useState<boolean>(false);
   const [isRegister, setIsRegister] = useState<boolean>(false);
   const items: MenuProps["items"] = [
@@ -41,9 +39,14 @@ const Account = () => {
     },
   ];
 
+  useEffect(() => {
+    const userInfo = getLocalStorage("user");
+    if (userInfo) setUserJson(JSON.parse(userInfo));
+  }, []);
+
   return (
     <div>
-      {userInfo ? (
+      {useJson ? (
         <Dropdown
           menu={{ items }}
           placement="bottomRight"
@@ -82,7 +85,7 @@ const Account = () => {
           <>
             <LoginFormAdmin />
             <div className="text-center">
-              <span className="mr-1">Don't have an account?</span>
+              <span className="mr-1">Don&apos;t have an account?</span>
               <Button
                 type="link"
                 className="p-0"

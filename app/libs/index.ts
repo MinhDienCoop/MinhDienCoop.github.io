@@ -21,5 +21,7 @@ export const copyButton = (label: string, value: string) => {
 
 export const getLocalStorage = (key: string) => {
   const localItem = localStorage.getItem(key);
-  return localItem;
+
+  if (localItem) return localItem;
+  else return null;
 };
