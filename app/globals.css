@@ -7,21 +7,21 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --border-cl: #f0f0f0;
-  --color-link: #256b40;
+  --color-link: #eaaa18;
   --box-shadow: 0 12.5px 12.5px 12.5px rgba(0, 0, 0, 0.15);
 
-  --sidebar-bg: #0b3e1f;
+  --sidebar-bg: #1e6f48;
   --sidebar-text: #ffffff;
 
   --error-cl: #8e0b21;
 
-  --btn-bg: #256b40;
+  --btn-bg: #2a6948;
   --btn-text: #ffffff;
-  --btn-bd: #256b40;
+  --btn-bd: #2a6948;
 
-  --btn-bg-hv: #174a2b;
+  --btn-bg-hv: #245d4d;
   --btn-text-hv: #ffffff;
-  --btn-bd-hv: #174a2b;
+  --btn-bd-hv: #245d4d;
 }
 
 .hide-scrollbar {

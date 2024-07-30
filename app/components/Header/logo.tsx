@@ -5,14 +5,18 @@ import { usePathname, useRouter } from "next/navigation";
 import LogoImageStatic from "@/public/images/logo.png";
 import Link from "next/link";
 
-const Logo = () => {
+interface LogoProps {
+  logo?: any;
+}
+
+const Logo = ({ logo }: LogoProps) => {
   const router = useRouter();
   const pathName = usePathname();
 
   const LogoImage = (
     <Image
       onClick={() => router.push("/")}
-      src={LogoImageStatic}
+      src={logo ? logo : LogoImageStatic}
       alt="Mdc Logo"
       className="absolute w-full h-full object-contain"
       fill

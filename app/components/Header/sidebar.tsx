@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import { Layout, Menu } from "antd";
 import {
   BarChartOutlined,
@@ -8,7 +9,8 @@ import {
 } from "@ant-design/icons";
 
 import Logo from "./logo";
-import Link from "next/link";
+
+import LogoImage from "@/public/images/logo2.png";
 
 interface SideBarProps {
   collapsed: boolean;
@@ -27,7 +29,7 @@ const SideBar = ({ collapsed }: SideBarProps) => {
           collapsed ? "mb-0" : "mb-10"
         } w-full h-[120px] sticky top-[4px]`}
       >
-        <Logo />
+        <Logo logo={LogoImage} />
       </div>
 
       <Menu
