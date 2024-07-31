@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 50, 68, 75;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --border-cl: #f0f0f0;
@@ -26,6 +26,21 @@
 
 .hide-scrollbar {
   scrollbar-width: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 1680px) {
+  .container {
+    max-width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 /* antd */
@@ -145,4 +160,30 @@
 
 :where(.css-dev-only-do-not-override-dkbvqv) a:hover {
   color: var(--color-link);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-submenu-selected,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-submenu-selected {
+  color: var(--color-link);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-item-selected::after,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-item-selected::after,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-submenu-selected::after,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-submenu-selected::after {
+  border-bottom-color: var(--color-link);
 }

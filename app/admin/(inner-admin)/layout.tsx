@@ -1,9 +1,9 @@
-import { Playfair } from "next/font/google";
+import { Nunito } from "next/font/google";
 
 import "@/app/globals.css";
 import AdminLayout from "@/app/components/Common/adminLayout";
 
-const fontBase = Playfair({ subsets: ["latin", "vietnamese"] });
+const fontBase = Nunito({ subsets: ["latin", "vietnamese"] });
 
 export const metadata = {
   title: "Mdc",

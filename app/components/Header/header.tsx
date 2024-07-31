@@ -7,14 +7,21 @@ import HeaderTools from "@/app/components/Header/headerTools";
 
 const Header = () => {
   return (
-    <Layout.Header style={{ display: "flex", alignItems: "center" }}>
-      <div className="relative w-[100px] min-w-[50px] h-[50px] px-3 mr-[24px] bg-[rgba(225,_225,_225,_0.2)] rounded-[6px] overflow-hidden">
-        <Logo />
+    <header className="shadow fixed top-5 left-5 right-5 z-10 bg-white rounded-lg py-2">
+      <div className="container">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative w-[100px] min-w-[50px] h-[50px]">
+            <Logo />
+          </div>
+          <div className="flex-1">
+            <MainMenu />
+          </div>
+          <div>
+            <HeaderTools />
+          </div>
+        </div>
       </div>
-
-      <MainMenu />
-      <HeaderTools />
-    </Layout.Header>
+    </header>
   );
 };
 

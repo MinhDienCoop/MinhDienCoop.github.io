@@ -7,8 +7,6 @@ import FooterContact from "./footerContact";
 import FooterLinks from "./footerLinks";
 import Newsletter from "./newsletter";
 
-import LogoImage from "@/public/images/logo2.png";
-
 const Footer = () => {
   const categories = [
     { label: "Food", href: "#" },
@@ -30,7 +28,7 @@ const Footer = () => {
         <div className="px-5 lg:w-2/12">
           <div className="max-w-[170px] pb-[46.82%] relative">
             <Image
-              src={LogoImage}
+              src={`${process.env.NEXT_PUBLIC_IMAGES_URL}/images/logo2.png`}
               alt="Mdc Logo"
               className="absolute w-full h-full object-contain"
               fill

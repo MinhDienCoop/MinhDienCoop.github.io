@@ -1,10 +1,10 @@
-import { Playfair } from "next/font/google";
+import { Nunito } from "next/font/google";
 
 import "@/app/globals.css";
 import Header from "@/app/components/Header/header";
 import Footer from "@/app/components/Footer/footer";
 
-const fontBase = Playfair({ subsets: ["latin", "vietnamese"] });
+const fontBase = Nunito({ subsets: ["latin", "vietnamese"] });
 
 export const metadata = {
   title: "Mdc",
@@ -23,7 +23,7 @@ export default async function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-        <main id="page-main" className="px-[48px]">
+        <main id="page-main">
           <div className="page-main-content min-h-[300px]">{children}</div>
         </main>
         <Footer />

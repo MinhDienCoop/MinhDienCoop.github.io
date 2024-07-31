@@ -64,3 +64,8 @@ model FileType {
   name  String @unique
   files File[]
 }
+
+model Provider {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+}

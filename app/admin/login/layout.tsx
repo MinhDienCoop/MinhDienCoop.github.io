@@ -1,8 +1,8 @@
-import { Playfair } from "next/font/google";
+import { Nunito } from "next/font/google";
 
 import "@/app/globals.css";
 
-const fontBase = Playfair({ subsets: ["latin", "vietnamese"] });
+const fontBase = Nunito({ subsets: ["latin", "vietnamese"] });
 
 export const metadata = {
   title: "Login - Mdc Admin ",
