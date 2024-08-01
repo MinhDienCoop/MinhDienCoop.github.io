@@ -39,6 +39,8 @@ const Account = () => {
     },
   ];
 
+  console.log("useJson: ", useJson);
+
   useEffect(() => {
     const userInfo = getLocalStorage("user");
     if (userInfo) setUserJson(JSON.parse(userInfo));
@@ -46,7 +48,7 @@ const Account = () => {
 
   return (
     <div>
-      {useJson ? (
+      {!useJson ? (
         <Dropdown
           menu={{ items }}
           placement="bottomRight"
@@ -63,7 +65,7 @@ const Account = () => {
       ) : (
         <Button
           type="text"
-          className="p-0 h-auto"
+          className="p-0 h-auto !bg-transparent"
           onClick={() => setOpenLoginForm(true)}
         >
           <Avatar

@@ -1,15 +1,31 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Dropdown, Radio, Tooltip, Input, Upload } from "antd";
+import {
+  Button,
+  Dropdown,
+  Radio,
+  Tooltip,
+  Input,
+  Upload,
+  Modal,
+  Select,
+} from "antd";
 import type { MenuProps, RadioChangeEvent, UploadProps } from "antd";
-import { PlusOutlined, SearchOutlined, SwapOutlined } from "@ant-design/icons";
+import {
+  PlusOutlined,
+  SearchOutlined,
+  SwapOutlined,
+  InboxOutlined,
+} from "@ant-design/icons";
 
 import FilesTable from "@/app/components/Sections/Files/filesTable";
 import PageTitle from "@/app/components/Common/pageTitle";
+import UploadModal from "@/app/components/Common/uploadModal";
 
 export default function Files() {
   const [value, setValue] = useState<string>("date");
   const [showFilter, setShowFilter] = useState<boolean>(false);
+  const [openModalUpload, setOpenModalUpload] = useState<boolean>(false);
   const items: MenuProps["items"] = [
     {
       key: "date",
@@ -55,9 +71,9 @@ export default function Files() {
         <div className="w-full md:flex-1">
           <PageTitle title="Files" />
         </div>
-        <Upload {...props}>
-          <Button type="primary">Upload</Button>
-        </Upload>
+        <Button type="primary" onClick={() => setOpenModalUpload(true)}>
+          Upload
+        </Button>
       </div>
 
       <div>
@@ -113,6 +129,16 @@ export default function Files() {
       <div className="mt-5">
         <FilesTable />
       </div>
+
+      <Modal
+        title="Basic Modal"
+        open={openModalUpload}
+        onOk={() => setOpenModalUpload(false)}
+        onCancel={() => setOpenModalUpload(false)}
+        footer={false}
+      >
+        <UploadModal />
+      </Modal>
     </div>
   );
 }
