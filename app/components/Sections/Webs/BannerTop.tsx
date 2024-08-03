@@ -23,7 +23,7 @@ const BannerTop = () => {
   ];
 
   return (
-    <Carousel autoplay={false}>
+    <Carousel dotPosition="left" autoplay={false}>
       {data?.map((item: any, index: number) => (
         <div key={index}>
           <div className="carousel-item-content w-full flex flex-wrap items-center bg-[#135D4C] text-white text-[18px]">

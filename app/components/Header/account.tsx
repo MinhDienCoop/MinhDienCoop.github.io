@@ -39,7 +39,7 @@ const Account = () => {
     },
   ];
 
-  console.log("useJson: ", useJson);
+  // console.log("useJson: ", useJson);
 
   useEffect(() => {
     const userInfo = getLocalStorage("user");
