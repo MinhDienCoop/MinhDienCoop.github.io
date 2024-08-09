@@ -12,8 +12,8 @@ const MainMenu = () => {
       label: <Link href="/">Home</Link>,
     },
     {
-      key: "our-work",
-      label: <Link href="/our-work">Our work</Link>,
+      key: "shops",
+      label: <Link href="/collections">Shops</Link>,
     },
     {
       key: "about-us",

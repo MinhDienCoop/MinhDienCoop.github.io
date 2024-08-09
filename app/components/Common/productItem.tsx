@@ -7,7 +7,7 @@ import { convertCurrency, formatCurrency } from "@/app/libs";
 
 const ProductItem = ({ product }: { product: ProductType }) => {
   return (
-    <div className="px-5">
+    <div className="bg-white rounded-xl overflow-hidden hover:shadow">
       <Link
         href={product.handle}
         className="group relative pb-[100%] block overflow-hidden"
@@ -31,7 +31,7 @@ const ProductItem = ({ product }: { product: ProductType }) => {
           fill
         />
       </Link>
-      <div className="text-center py-5">
+      <div className="text-center p-5">
         <h3 className="text-lg font-semibold">
           <Link href={product.handle}>{product.name}</Link>
         </h3>

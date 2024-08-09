@@ -187,3 +187,9 @@
   > .ant-menu-submenu-selected::after {
   border-bottom-color: var(--color-link);
 }
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-breadcrumb ol {
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}

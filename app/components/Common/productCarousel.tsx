@@ -29,7 +29,7 @@ const ProductCarousel = ({ data }: ProductCarouselProps) => {
           ]}
         >
           {data?.map((item: ProductType) => (
-            <div key={item.id}>
+            <div key={item.id} className="px-5">
               <ProductItem product={item} />
             </div>
           ))}

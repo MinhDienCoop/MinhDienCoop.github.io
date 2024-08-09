@@ -1,7 +1,10 @@
 export type CategoryType = {
+  id: string;
   name: string;
   image?: string;
   handle: string;
+  description?: string;
+  productList: ProductType[];
 };
 
 export type ProductVariations = {
